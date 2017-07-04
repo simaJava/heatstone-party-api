@@ -14,8 +14,7 @@ public class TestController {
 	@Autowired
 	private QiNiuConfig qiNiuConfig;
 	
-	
-	@RequestMapping("/getConfig")
+	@RequestMapping("/config")
 	@ResponseBody
 	public String getConfiguration(){
 		

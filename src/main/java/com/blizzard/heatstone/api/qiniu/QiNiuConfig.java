@@ -1,19 +1,19 @@
 package com.blizzard.heatstone.api.qiniu;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
+@ConfigurationProperties(prefix = "com.qiniu.storage")
 public class QiNiuConfig {
 	
-	@Value("${com.qiniu.storage.accessKey}")
 	private String accessKey;
 	
-	@Value("${com.qiniu.storage.secretKey}")
 	private String secretKey;
 	
-	@Value("${com.qiniu.storage.domain}")
 	private String domain;
+	
+	private String bucketName;
 
 	public String getAccessKey() {
 		return accessKey;
@@ -39,11 +39,18 @@ public class QiNiuConfig {
 		this.domain = domain;
 	}
 
+	public String getBucketName() {
+		return bucketName;
+	}
+
+	public void setBucketName(String bucketName) {
+		this.bucketName = bucketName;
+	}
+
 	@Override
 	public String toString() {
-		return "QiNiuConfig [accessKey=" + accessKey + ", secretKey=" + secretKey + ", domain=" + domain + "]";
+		return "QiNiuConfig [accessKey=" + accessKey + ", secretKey=" + secretKey + ", domain=" + domain
+				+ ", bucketName=" + bucketName + "]";
 	}
-	
-	
 
 }
