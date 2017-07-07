@@ -78,7 +78,7 @@ public class CodeGenerate {
     }
     
     private void replaceJodaDate(){
-    	File root = new File("src/main/java/com/wk/ms/api/swagger/model");
+    	File root = new File("src/main/java/com/blizzard/heatstone/api/swagger/model");
         if(root.exists()){
         	System.out.println("############## model ##############");
         	File[] files = root.listFiles();
@@ -100,7 +100,7 @@ public class CodeGenerate {
 				}
         	}
         }
-        root = new File("src/main/java/com/wk/ms/api/swagger/api");
+        root = new File("src/main/java/com/blizzard/heatstone/api/swagger/api");
         if(root.exists()){
         	System.out.println("############## api ##############");
         	File[] files = root.listFiles();
@@ -125,7 +125,7 @@ public class CodeGenerate {
     }
     
     private void addCustomApiToSwagger(){
-    	File file = new File("src/main/java/com/wk/ms/api/swagger/config/SwaggerDocumentationConfig.java");
+    	File file = new File("src/main/java/com/blizzard/heatstone/api/swagger/config/SwaggerDocumentationConfig.java");
     	if(file.exists()){
     		System.out.println("############################");
     		try {
@@ -137,7 +137,7 @@ public class CodeGenerate {
                 }
                 br.close();
 				FileWriter fw = new FileWriter(file);
-				fw.write(content.toString().replaceAll("RequestHandlerSelectors.basePackage\\(\"com.wk.ms.api.swagger.api\"\\)", "RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)").replaceAll("swagger.config;", "swagger.config;\nimport io.swagger.annotations.ApiOperation;"));
+				fw.write(content.toString().replaceAll("RequestHandlerSelectors.basePackage\\(\"com.blizzard.heatstone.api.swagger.api\"\\)", "RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)").replaceAll("swagger.config;", "swagger.config;\nimport io.swagger.annotations.ApiOperation;"));
 				fw.close();
 			} catch (IOException e) {
 				e.printStackTrace();

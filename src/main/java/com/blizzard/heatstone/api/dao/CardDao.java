@@ -1,4 +1,4 @@
-package com.blizzard.heatstone.dao;
+package com.blizzard.heatstone.api.dao;
 
 import com.blizzard.heatstone.api.swagger.model.Card;
 

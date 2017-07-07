@@ -1,3 +1,4 @@
+
 package com.blizzard.heatstone.api.swagger.api;
 
 import java.util.Map;
@@ -16,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T14:30:23.344+08:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T15:53:17.778+08:00")
 
 @Api(value = "cards", description = "the cards API")
 public interface CardsApi {

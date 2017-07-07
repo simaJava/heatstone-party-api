@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.blizzard.heatstone.dao.CardDao" >
+<mapper namespace="com.blizzard.heatstone.api.dao.CardDao" >
   <resultMap id="BaseResultMap" type="com.blizzard.heatstone.api.swagger.model.Card" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />

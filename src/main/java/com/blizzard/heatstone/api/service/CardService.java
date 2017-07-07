@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.blizzard.heatstone.api.enums.ApiStatus;
 import com.blizzard.heatstone.api.swagger.model.Card;
-import com.blizzard.heatstone.dao.CardDao;
+import com.blizzard.heatstone.api.dao.CardDao;
 
 @Service("com.blizzard.heatstone.api.swagger.api.CardsApiController")
 public class CardService {
@@ -27,7 +27,7 @@ public class CardService {
 		log.info("insert card : " + card);
 		Map<String, Object> map = new HashMap<String, Object>();
 		try {
-			card.setCreateTime(null);
+			card.setCreateTime(new Date());
 			int id = cardDao.insertSelective(card);
 			if(id > 1){
 				card.setId(id);

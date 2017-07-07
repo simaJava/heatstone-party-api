@@ -1,3 +1,4 @@
+
 package com.blizzard.heatstone.api.swagger.model;
 
 import java.util.Objects;
@@ -12,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ModelApiResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T14:30:23.344+08:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T15:53:17.778+08:00")
 
 public class ModelApiResponse   {
   private Integer code = null;
@@ -118,4 +119,3 @@ public class ModelApiResponse   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

@@ -1,3 +1,4 @@
+
 package com.blizzard.heatstone.api.swagger.model;
 
 import java.util.Objects;
@@ -5,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.DateTime;
+import java.util.Date;
 
 
 
@@ -13,7 +14,7 @@ import org.joda.time.DateTime;
 /**
  * Card
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T14:30:23.344+08:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T15:53:17.778+08:00")
 
 public class Card   {
   private Integer id = null;
@@ -42,7 +43,7 @@ public class Card   {
 
   private Integer adapted = null;
 
-  private DateTime createTime = null;
+  private Date createTime = null;
 
   public Card id(Integer id) {
     this.id = id;
@@ -278,7 +279,7 @@ public class Card   {
     this.adapted = adapted;
   }
 
-  public Card createTime(DateTime createTime) {
+  public Card createTime(Date createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -288,11 +289,11 @@ public class Card   {
    * @return createTime
   **/
   @ApiModelProperty(value = "添加时间")
-  public DateTime getCreateTime() {
+  public Date getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(DateTime createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
@@ -361,4 +362,3 @@ public class Card   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
