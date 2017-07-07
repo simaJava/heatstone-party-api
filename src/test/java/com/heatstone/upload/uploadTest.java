@@ -21,9 +21,9 @@ public class uploadTest {
 	
 	@Test
 	public void simpleUpload() {
-		
-		System.out.println(qiNiuHelper.simpleUpload("D:\\qrcode.jpg", "test"));
-		
+				
+		System.out.println(qiNiuHelper.simpleUpload("D:\\qrcode.jpg", "\test.png"));
+	   
 	}
 	
 }

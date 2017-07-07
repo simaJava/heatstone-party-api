@@ -1,5 +1,6 @@
 package com.blizzard.heatstone.api.qiniu;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,10 +12,13 @@ import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSONObject;
 import com.blizzard.heatstone.api.enums.ApiStatus;
+import com.google.gson.Gson;
+import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
 import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
+import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 
 @Component
@@ -42,16 +46,25 @@ public class QiNiuHelper {
 		try {
 			String upToken = getToken();
 			UploadManager uploadManager = getUploadManager();
-			Response response = uploadManager.put(path, fileName, upToken);
+			Response response =  uploadManager.put(path, fileName, upToken);
 			if(response.isOK()){
-				JSONObject obj = JSONObject.parseObject(response.bodyString());
-				map.put("url", obj);
+				DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+				map.put("key", putRet.key);
+				map.put("hash", putRet.hash);
+				map.put("status", ApiStatus.SUCCESS.getCode());
+				map.put("msg", ApiStatus.SUCCESS.getMessage());
+			}else{
+				map.put("status", ApiStatus.FAIL.getCode());
+				map.put("msg", ApiStatus.FAIL.getMessage());
 			}
-			map.put("status", ApiStatus.SUCCESS.getCode());
-			map.put("msg", ApiStatus.SUCCESS.getMessage());
 			
-		} catch (Exception e) {
-			log.error("simple upload error", e);
+		} catch (QiniuException  e) {
+			Response r = e.response;
+			try {
+				log.error("simple upload error :" + r.bodyString());
+			} catch (QiniuException e1) {
+				e1.printStackTrace();
+			}
 			map.put("status", ApiStatus.ERROR.getCode());
 			map.put("msg", ApiStatus.ERROR.getMessage());
 		}
@@ -80,7 +93,7 @@ public class QiNiuHelper {
 	private UploadManager getUploadManager() {
 
 		if(uploadManager == null){
-			uploadManager = new UploadManager(new Configuration(Zone.zone0()));
+			uploadManager = new UploadManager(new Configuration(Zone.autoZone()));
 		}
 		return uploadManager;
 	}
