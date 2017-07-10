@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T15:53:17.778+08:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-10T17:59:31.658+08:00")
 
 @Controller
 public class CardsApiController implements CardsApi {
@@ -27,6 +27,15 @@ public class CardsApiController implements CardsApi {
     public ResponseEntity<Map<String, Object>> insert(
 
 @ApiParam(value = "卡牌" ,required=true ) @RequestBody Card card
+
+) {
+        // do some magic!
+        return new ResponseEntity<Map<String, Object>>(HttpStatus.OK);
+    }
+
+    public ResponseEntity<Map<String, Object>> selectById(
+@ApiParam(value = "卡牌id",required=true ) @PathVariable("id") Integer id
+
 
 ) {
         // do some magic!

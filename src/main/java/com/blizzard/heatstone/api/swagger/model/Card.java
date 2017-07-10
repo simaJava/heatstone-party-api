@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * Card
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T15:53:17.778+08:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-10T17:59:31.658+08:00")
 
 public class Card   {
   private Integer id = null;

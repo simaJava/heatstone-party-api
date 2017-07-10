@@ -17,21 +17,33 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-07T15:53:17.778+08:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-10T17:59:31.658+08:00")
 
 @Api(value = "cards", description = "the cards API")
 public interface CardsApi {
 
     @ApiOperation(value = "insert card", notes = "insert new card entity", response = Object.class, responseContainer = "Map", tags={ "card", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "", response = Object.class),
-        @ApiResponse(code = 400, message = "Invalid status value", response = Object.class) })
-    @RequestMapping(value = "/cards",
+        @ApiResponse(code = 200, message = "", response = Object.class) })
+    @RequestMapping(value = "/cards/",
         produces = { "application/xml", "application/json" }, 
         method = RequestMethod.POST)
     ResponseEntity<Map<String, Object>> insert(
 
 @ApiParam(value = "卡牌" ,required=true ) @RequestBody Card card
+
+);
+
+
+    @ApiOperation(value = "根据主键查询卡牌详情", notes = "根据主键查询活动详情", response = Object.class, responseContainer = "Map", tags={ "card", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "", response = Object.class) })
+    @RequestMapping(value = "/cards/{id}",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    ResponseEntity<Map<String, Object>> selectById(
+@ApiParam(value = "卡牌id",required=true ) @PathVariable("id") Integer id
+
 
 );
 

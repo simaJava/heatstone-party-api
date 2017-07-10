@@ -1,4 +1,8 @@
 
+
+
+
+
 package com.blizzard.heatstone.api.swagger.model;
 
 import java.util.Objects;
