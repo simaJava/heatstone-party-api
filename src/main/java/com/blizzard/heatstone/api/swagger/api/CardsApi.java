@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-10T17:59:31.658+08:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-12T11:19:48.335+08:00")
 
 @Api(value = "cards", description = "the cards API")
 public interface CardsApi {
@@ -26,7 +26,7 @@ public interface CardsApi {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "", response = Object.class) })
     @RequestMapping(value = "/cards/",
-        produces = { "application/xml", "application/json" }, 
+        produces = { "application/json" }, 
         method = RequestMethod.POST)
     ResponseEntity<Map<String, Object>> insert(
 

@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * Card
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-10T17:59:31.658+08:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2017-07-12T11:19:48.335+08:00")
 
 public class Card   {
   private Integer id = null;
@@ -25,7 +25,7 @@ public class Card   {
 
   private Integer quality = null;
 
-  private Integer character = null;
+  private Integer characters = null;
 
   private Integer race = null;
 
@@ -117,22 +117,22 @@ public class Card   {
     this.quality = quality;
   }
 
-  public Card character(Integer character) {
-    this.character = character;
+  public Card characters(Integer characters) {
+    this.characters = characters;
     return this;
   }
 
    /**
    * 特效
-   * @return character
+   * @return characters
   **/
   @ApiModelProperty(value = "特效")
-  public Integer getCharacter() {
-    return character;
+  public Integer getCharacters() {
+    return characters;
   }
 
-  public void setCharacter(Integer character) {
-    this.character = character;
+  public void setCharacters(Integer characters) {
+    this.characters = characters;
   }
 
   public Card race(Integer race) {
@@ -311,7 +311,7 @@ public class Card   {
         Objects.equals(this.name, card.name) &&
         Objects.equals(this.costs, card.costs) &&
         Objects.equals(this.quality, card.quality) &&
-        Objects.equals(this.character, card.character) &&
+        Objects.equals(this.characters, card.characters) &&
         Objects.equals(this.race, card.race) &&
         Objects.equals(this.imgUrl, card.imgUrl) &&
         Objects.equals(this.barImgUrl, card.barImgUrl) &&
@@ -325,7 +325,7 @@ public class Card   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, costs, quality, character, race, imgUrl, barImgUrl, occupationId, dust, source, effectDesc, adapted, createTime);
+    return Objects.hash(id, name, costs, quality, characters, race, imgUrl, barImgUrl, occupationId, dust, source, effectDesc, adapted, createTime);
   }
 
   @Override
@@ -337,7 +337,7 @@ public class Card   {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    costs: ").append(toIndentedString(costs)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
-    sb.append("    character: ").append(toIndentedString(character)).append("\n");
+    sb.append("    characters: ").append(toIndentedString(characters)).append("\n");
     sb.append("    race: ").append(toIndentedString(race)).append("\n");
     sb.append("    imgUrl: ").append(toIndentedString(imgUrl)).append("\n");
     sb.append("    barImgUrl: ").append(toIndentedString(barImgUrl)).append("\n");

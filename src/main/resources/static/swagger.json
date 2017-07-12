@@ -21,7 +21,6 @@ paths:
       description: insert new card entity
       operationId: insert
       produces:
-        - application/xml
         - application/json
       parameters:
         - in: body
@@ -76,7 +75,7 @@ definitions:
         type: integer
         format: int32
         description: 卡牌品质
-      character:
+      characters:
         type: integer
         format: int32
         description: 特效
