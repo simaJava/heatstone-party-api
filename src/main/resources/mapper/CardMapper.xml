@@ -31,18 +31,7 @@
     delete from card
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.blizzard.heatstone.api.swagger.model.Card" >
-    insert into card (id, name, costs, 
-      quality, characters, race, 
-      img_url, bar_img_url, occupation_id, 
-      dust, source, effect_desc, 
-      adapted, create_time)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{costs,jdbcType=INTEGER}, 
-      #{quality,jdbcType=INTEGER}, #{characters,jdbcType=INTEGER}, #{race,jdbcType=INTEGER}, 
-      #{imgUrl,jdbcType=VARCHAR}, #{barImgUrl,jdbcType=VARCHAR}, #{occupationId,jdbcType=INTEGER}, 
-      #{dust,jdbcType=INTEGER}, #{source,jdbcType=INTEGER}, #{effectDesc,jdbcType=VARCHAR}, 
-      #{adapted,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP})
-  </insert>
+  
   <insert id="insertSelective" parameterType="com.blizzard.heatstone.api.swagger.model.Card" keyProperty="id" useGeneratedKeys="true" >
     insert into card
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -171,23 +160,6 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.blizzard.heatstone.api.swagger.model.Card" >
-    update card
-    set name = #{name,jdbcType=VARCHAR},
-      costs = #{costs,jdbcType=INTEGER},
-      quality = #{quality,jdbcType=INTEGER},
-      characters = #{characters,jdbcType=INTEGER},
-      race = #{race,jdbcType=INTEGER},
-      img_url = #{imgUrl,jdbcType=VARCHAR},
-      bar_img_url = #{barImgUrl,jdbcType=VARCHAR},
-      occupation_id = #{occupationId,jdbcType=INTEGER},
-      dust = #{dust,jdbcType=INTEGER},
-      source = #{source,jdbcType=INTEGER},
-      effect_desc = #{effectDesc,jdbcType=VARCHAR},
-      adapted = #{adapted,jdbcType=BIT},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

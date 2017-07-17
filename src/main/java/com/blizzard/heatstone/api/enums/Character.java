@@ -9,7 +9,7 @@ public enum Character {
 
 	Taunt(1,"嘲讽","taunt",""),
 	Battlecry(2,"战吼","battlecry",""),
-	Deathrattle(3,"亡语","Deathrattle",""),
+	Deathrattle(3,"亡语","deathrattle",""),
 	;
 	
 	private Integer id;
