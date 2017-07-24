@@ -4,9 +4,6 @@ spring:
   datasource: 
     type: com.alibaba.druid.pool.DruidDataSource
     driverClass: com.mysql.jdbc.Driver
-    password: test
-    url: "jdbc:mysql://116.62.114.108/heat-stone-party"
-    username: test
 freemarker: 
   cache: false
   charset: UTF-8
@@ -31,3 +28,17 @@ com:
       domain: "http://oslkcublz.bkt.clouddn.com/"
       bucketName: heat-stone
 
+---
+spring: 
+  profiles: default
+  datasource: 
+    password: root
+    url: "jdbc:mysql://127.0.0.1/heat"
+    username: root
+---
+spring: 
+  profiles: test
+  datasource: 
+    password: test
+    url: "jdbc:mysql://116.62.114.108/heat-stone-party"
+    username: test
