@@ -33,12 +33,12 @@ spring:
   profiles: default
   datasource: 
     password: root
-    url: "jdbc:mysql://127.0.0.1/heat"
+    url: "jdbc:mysql://127.0.0.1/heat-stone"
     username: root
 ---
 spring: 
   profiles: test
   datasource: 
-    password: test
-    url: "jdbc:mysql://116.62.114.108/heat-stone-party"
-    username: test
+    password: heart
+    url: "jdbc:mysql://116.62.114.108/heat-stone"
+    username: root
